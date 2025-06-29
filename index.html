@@ -718,11 +718,7 @@
             width: 0%;
             transition: width 0.3s ease;
         }
-        section {
-  scroll-margin-top: 80px; /* adjust this if your navbar height changes */
-}
-
-    </style>
+          </style>
 </head>
 <body>
     <!-- Scroll Indicator -->
@@ -765,7 +761,7 @@
            <div class="hero-visual">
   <div class="hero-card">
     <div class="hero-card-icon" style="background: none; padding: 0;">
-      <img src="https://drive.google.com/file/d/1LzfHbf12L33MhUDiqtABHwKB7ZhgejNm/view?usp=drive_link" style="width: 100px; height: 100px;">
+      <img src="https://media.licdn.com/dms/image/v2/D560BAQHCE8KAHAsfEA/company-logo_200_200/company-logo_200_200/0/1736280539485/beyondgradess_logo?e=2147483647&v=beta&t=mIPlwnFcjNFDsROeK_pZprO1oKphUsi2AE_abS5bzfc"width: 100px; height: 100px;">
     </div>
     <h3 style="color: white; margin-bottom: 1rem;">All About Your Dreams</h3>
     <p style="color: rgba(255, 255, 255, 0.8);">From IIT Kharagpur to your dream career</p>
@@ -888,35 +884,61 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2 style="color: white;">Get In Touch</h2>
-                <p style="color: rgba(255, 255, 255, 0.8);">Ready to transform your career? Let's start the conversation.</p>
-            </div>
-            <div class="contact-content">
-                <div class="contact-form">
-                    <h3 style="margin-bottom: 1.5rem; color: white;">Send us a message</h3>
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Tell us about your career goals and how we can help..." required></textarea>
-                        </div>
-                        <button type="submit" class="cta-button" style="width: 100%;">Send Message</button>
-                    </form>
-                </div>
+  <section id="contact" class="contact">
+  <h2 style="text-align: center; margin-bottom: 2rem;">Contact Us</h2>
+  <div class="contact-content">
+    
+    <!-- Contact Form -->
+    <form class="contact-form">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Enter your name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" rows="5" placeholder="Write your message..." required></textarea>
+      </div>
+      <button type="submit" style="padding: 1rem 2rem; background: #667eea; color: white; border: none; border-radius: 10px; cursor: pointer;">Send Message</button>
+    </form>
+
+    <!-- Contact Info -->
+    <div class="contact-info">
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div>
+          <strong>Phone:</strong>
+          <p>+91 98765 43210</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📧</div>
+        <div>
+          <strong>Email:</strong>
+          <p>support@beyondcareer.com</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div>
+          <strong>Address:</strong>
+          <p>Bangalore, India</p>
+        </div>
+      </div>
+
+      <div class="social-links">
+        <a href="#" class="social-link">F</a>
+        <a href="#" class="social-link">T</a>
+        <a href="#" class="social-link">I</a>
+        <a href="#" class="social-link">L</a>
+      </div>
+    </div>
+
+  </div>
+</section>
                 <script>
   // Scroll Progress Indicator
   window.onscroll = function () {
