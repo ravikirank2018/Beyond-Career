@@ -14,6 +14,29 @@ Beyond Career is a modern, responsive career guidance platform designed to empow
 - **Success Stories**: Testimonial section showcasing user achievements
 
 ## System Architecture
+graph TB
+    A[User Browser] --> B[Static Website]
+    B --> C[HTML Structure]
+    B --> D[CSS Styling]
+    B --> E[JavaScript Logic]
+    
+    C --> F[Navigation]
+    C --> G[Hero Section]
+    C --> H[About Section]
+    C --> I[Services Section]
+    C --> J[Testimonials]
+    C --> K[Contact Form]
+    
+    D --> L[Responsive Design]
+    D --> M[Animations]
+    D --> N[Glassmorphism Effects]
+    
+    E --> O[Scroll Progress]
+    E --> P[Mobile Menu]
+    E --> Q[Form Handling]
+    
+    K --> R[Form Submission]
+    R --> S[Email Notification]
 
 ## Entity Relationship Diagram
 
