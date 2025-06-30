@@ -121,15 +121,8 @@ beyond-career/
 │
 ├── index.html              # Main HTML file with embedded CSS/JS
 ├── README.md               # Project documentation
-├── assets/                 # Static assets (if separated)
-│   ├── images/
-│   ├── icons/
-│   └── fonts/
 ├── docs/                   # Documentation files
 │   ├── design-rationale.md
-│   ├── technical-docs.md
-│   └── deployment-guide.md
-└── .gitignore             # Git ignore file
 ```
 
 ## Quick Start Guide
