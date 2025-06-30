@@ -243,5 +243,3 @@ Mystic → Clarity → Interaction → Passion → CTA → Achievement
 - **Voice interface** considerations
 
 ---
-
-*This design rationale serves as the foundational document for all Beyond Career visual design decisions. It should be referenced for all design implementations and updated as the platform evolves.*
