@@ -14,7 +14,7 @@ Beyond Career is a modern, responsive career guidance platform designed to empow
 - **Success Stories**: Testimonial section showcasing user achievements
 
 ## System Architecture
-graph TB
+```mermaidgraph TB
     A[User Browser] --> B[Static Website]
     B --> C[HTML Structure]
     B --> D[CSS Styling]
