@@ -956,6 +956,7 @@
   </div>
 </section>
 
+
                 <script>
   // Scroll Progress Indicator
 window.onscroll = function () {
@@ -991,20 +992,117 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
 });
 
 </script>
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6862533c49c75b19094a7a05/1iv01a9d8';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
+<!-- Chatbot Toggle Button -->
+<div id="chatbotToggle" style="
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: var(--accent-gradient);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 2000;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+">
+💬
+</div>
+
+<!-- Chatbot Modal -->
+<div id="chatbotModal" style="
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  width: 300px;
+  max-height: 450px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 2000;
+">
+  <div style="background: var(--primary-gradient); color: white; padding: 1rem; font-weight: 600; display: flex; justify-content: space-between; align-items: center;">
+    BeyondBot
+    <span id="closeChatbot" style="cursor:pointer;">✖️</span>
+  </div>
+  <div id="chatMessages" style="flex:1; padding: 1rem; overflow-y: auto; font-size: 0.95rem; color: white;"></div>
+  <div style="padding: 0.8rem; display: flex; gap: 0.5rem;">
+    <input id="chatInput" type="text" placeholder="Type a question..." style="flex:1; padding: 0.6rem; border-radius: 8px; border:none; background: rgba(255,255,255,0.1); color:white;">
+    <button id="sendMessage" style="background: var(--accent-gradient); border:none; padding:0.6rem 0.9rem; color:white; border-radius:8px; cursor:pointer;">➤</button>
+  </div>
+</div>
+
 </body>
+<script>
+// Chatbot toggle
+document.getElementById("chatbotToggle").onclick = () => {
+  document.getElementById("chatbotModal").style.display = "flex";
+};
+
+// Close chatbot
+document.getElementById("closeChatbot").onclick = () => {
+  document.getElementById("chatbotModal").style.display = "none";
+};
+
+// Simple keyword-based replies
+const faqResponses = {
+  "what is beyond career": "Beyond Career is a student career empowerment platform offering mentorship, internships, and guidance to help you land your dream role.",
+  "how can i apply for internships": "Go to the Services section on our website and click on 'Internship Opportunities' — you'll find the application process there.",
+  "contact details": "You can reach us at support@beyondcareer.com or call +91 98765 43210.",
+  "hello": "Hi there! How can I assist you today?",
+  "hi": "Hello! Ask me about Beyond Career, internships, or services.",
+  "thank you": "You're welcome! Feel free to ask anything else."
+};
+
+// Chat sending logic
+document.getElementById("sendMessage").onclick = () => {
+  const input = document.getElementById("chatInput");
+  const userMessage = input.value.trim();
+  if (userMessage === "") return;
+
+  const chatMessages = document.getElementById("chatMessages");
+
+  // Append user's message
+  chatMessages.innerHTML += `<div style="margin-bottom:0.5rem;"><strong>You:</strong> ${userMessage}</div>`;
+
+  // Check for keyword match
+  const lowerMessage = userMessage.toLowerCase();
+  let response = "Sorry, I don't have an answer for that. Try asking about internships, career guidance, or contact details.";
+
+  for (const keyword in faqResponses) {
+    if (lowerMessage.includes(keyword)) {
+      response = faqResponses[keyword];
+      break;
+    }
+  }
+
+  // Append bot response
+  chatMessages.innerHTML += `<div style="margin-bottom:1rem;"><strong>BeyondBot:</strong> ${response}</div>`;
+
+  // Scroll to bottom
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+
+  // Clear input
+  input.value = "";
+};
+
+// Press Enter to send
+document.getElementById("chatInput").addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    document.getElementById("sendMessage").click();
+  }
+});
+</script>
+
 </html>
 
 
