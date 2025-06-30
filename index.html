@@ -38,6 +38,7 @@
             overflow-x: hidden;
             scroll-behavior: smooth;
         }
+        
 
         /* Navigation */
         nav {
@@ -721,6 +722,21 @@
           </style>
 </head>
 <body>
+    <div id="formMessage" style="
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--secondary-gradient);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  display: none;
+  z-index: 2000;
+  font-weight: 600;
+"></div>
+
     <!-- Scroll Indicator -->
     <div class="scroll-indicator">
         <div class="scroll-progress" id="scrollProgress"></div>
@@ -889,7 +905,7 @@
   <div class="contact-content">
     
     <!-- Contact Form -->
-    <form class="contact-form">
+    <form class="contact-form" id="contactForm">
       <div class="form-group">
         <label for="name">Name</label>
         <input type="text" id="name" placeholder="Enter your name" required>
@@ -941,26 +957,38 @@
 </section>
                 <script>
   // Scroll Progress Indicator
-  window.onscroll = function () {
-    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (winScroll / height) * 100;
-    document.getElementById("scrollProgress").style.width = scrolled + "%";
-  };
+window.onscroll = function () {
+  const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrolled = (winScroll / height) * 100;
+  document.getElementById("scrollProgress").style.width = scrolled + "%";
+};
 
-  // Hamburger Menu Toggle
-  const hamburger = document.getElementById("hamburger");
-  const navLinks = document.getElementById("navLinks");
-  hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-  });
+// Hamburger Menu Toggle
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
 
-  // Contact Form Submit Handler (simple demo)
-  document.getElementById("contactForm").addEventListener("submit", function (e) {
-    e.preventDefault();
-    alert("Thank you for reaching out! We'll get back to you soon.");
-    this.reset();
-  });
+// Contact Form Submit Handler with floating message
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  // Show floating message
+  const messageDiv = document.getElementById("formMessage");
+  messageDiv.textContent = "✅ Message sent! We'll get back to you soon.";
+  messageDiv.style.display = "block";
+
+  // Hide after 3 seconds
+  setTimeout(() => {
+    messageDiv.style.display = "none";
+  }, 3000);
+
+  // Reset form
+  this.reset();
+});
+
 </script>
 
                         
