@@ -145,8 +145,7 @@ beyond-career/
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/yourusername/beyond-career.git
-   cd beyond-career
+   git clone https://github.com/ravikirank2018/Beyond-Career
    ```
 
 2. **Open in Browser**
@@ -211,7 +210,7 @@ beyond-career/
    - Branch: main
 
 2. **Access Site**
-   - URL: `https://yourusername.github.io/beyond-career`
+   - URL: `https://ravikirank2018.github.io/Beyond-Career/`
 
 ## Customization Guide
 
@@ -309,29 +308,3 @@ console.log('Form submitted:', formData);
 3. Commit changes (`git commit -m 'Add AmazingFeature'`)
 4. Push to branch (`git push origin feature/AmazingFeature`)
 5. Open Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Team
-
-- **Project Lead**: [Your Name]
-- **Design**: UI/UX Team
-- **Development**: Frontend Team
-- **Testing**: QA Team
-
-## Support
-
-For support, email support@beyondcareer.com or join our Slack channel.
-
-## Acknowledgments
-
-- IIT Kharagpur for inspiration
-- Google Fonts for typography
-- Flaticon for icons
-- Community contributors
-
----
-
-**Made with care by the Beyond Career Team**
